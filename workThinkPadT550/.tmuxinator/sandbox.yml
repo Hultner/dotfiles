@@ -1,0 +1,21 @@
+name: default
+root: ~/
+windows:
+  - ik:
+      layout: 9efa,209x64,0,0{119x64,0,0,0,89x64,120,0,5}
+      panes:
+        - l
+        - ik
+  - dev:
+      layout: 67f4,209x64,0,0{109x64,0,0[109x51,0,0,1,109x12,0,52,8],99x64,110,0[99x47,110,0,7,99x16,110,48,9]}
+      panes: 
+        - cd ~/dev/python/helio/system-assistant-reloaded && radon cc **/*.py
+        - cd ~/dev/python/helio
+        - cd ~/dev/python/helio/system-assistant-reloaded && l && git status
+        - cd ~/dev/python/helio/system-assistant-reloaded && python2
+  - music:
+      layout: 4f99,209x64,0,0{154x64,0,0,3,54x64,155,0,6}
+      panes:
+        - ncmpcpp
+        - mopidy
+

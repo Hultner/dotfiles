@@ -56,9 +56,9 @@ Xft.lcdfilter: lcddefault
 *.color20:      base04
 *.color21:      base06
 
-URxvt.scrollstyle: next
-!URxvt.scrollBar: false
-URxvt.font: xft:Droid Sans Mono Slashed for Powerline:style=Regular:size=9, -*-unifont-*-*-*-*-*-*-*-*-*-*-*-*
+!URxvt.scrollstyle: next
+URxvt.scrollBar: false
+URxvt.font: xft:Sauce Code Powerline:style=Regular:size=10, -*-Symbola-*-*-*-*-*-*-*-*-*-*-*-*
 !URxvt.font: xft:Droid Sans Mono Slashed for Powerline:style=Regular:size=9, xft:Input Mono:size=8, xft:Input Mono,InputMono Medium:style=Regular:size=9, -*-unifont-*-*-*-*-*-*-*-*-*-*-*-*
 URxvt.letterSpace: 0
 URxvt.perl-ext: default,url-select

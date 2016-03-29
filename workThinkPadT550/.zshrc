@@ -120,3 +120,7 @@ fi
 
 # Powerline tmux exports
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+alias killjobs="jobs -p | awk '{print \$3}' | xargs kill"
+alias 0xdbe="sh ~/dev/ide/0xDBE/bin/0xdbe.sh"
+alias datagrip="sh ~/dev/ide/datagrip/bin/datagrip.sh"
+alias jb='python /home/hultner/dev/sandbox/pyjb/jb.py'

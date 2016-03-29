@@ -72,3 +72,6 @@ URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.clipboard.copycmd:  xsel -ib
 URxvt.clipboard.pastecmd: xsel -ob
+! Print to a file instead of to printer
+URxvt.print-pipe: cat > $HOME/.urxvt/print/$(date --iso-8601=seconds).dump.txt
+

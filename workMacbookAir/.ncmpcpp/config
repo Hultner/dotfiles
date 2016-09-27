@@ -1,0 +1,6 @@
+
+playlist_display_mode = "columns"
+song_columns_list_format = "(25)[cyan]{a}  (55)[green]{t} (5)[blue]{b}"
+main_window_highlight_color = "green"
+main_window_color = "green"
+

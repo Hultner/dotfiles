@@ -1,0 +1,20 @@
+#
+# ~/.xprofile
+#
+# sourced by /etc/lxdm/Xsession
+#
+
+if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+    eval "$(dbus-launch --sh-syntax --exit-with-session)"
+fi
+
+# Environment variables
+#
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+
+# Activate Display Link Quad Monitor setup
+# Only sets quad monitor if displaylink is available
+#dlq
+
+$(xrandr --listproviders | grep -q "modesetting") && xrandr --setprovideroutputsource 1 0 && \
+xrandr --output VIRTUAL1 --off --output eDP1 --mode 2880x1620 --pos 4650x76 --rotate normal --output DP1 --off --output DP2-1 --mode 1680x1050 --pos 1680x0 --rotate left --output DP2-2 --mode 1920x1080 --pos 2730x76 --rotate normal --output DP2-3 --off --output HDMI2 --off --output HDMI1 --off --output DVI-I-1 --mode 1680x1050 --pos 0x140 --rotate normal --output DP2 --off

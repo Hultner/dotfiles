@@ -124,3 +124,9 @@ alias killjobs="jobs -p | awk '{print \$3}' | xargs kill"
 alias 0xdbe="sh ~/dev/ide/0xDBE/bin/0xdbe.sh"
 alias datagrip="sh ~/dev/ide/datagrip/bin/datagrip.sh"
 alias jb='python /home/hultner/dev/sandbox/pyjb/jb.py'
+export GOPATH=~/go
+export PATH=$PATH:$GOPATH/bin
+alias väder="curl wttr.in/gothenburg"
+alias wlan="sudo nmtui"
+
+alias suvi=sudoedit

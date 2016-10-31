@@ -1,4 +1,3 @@
-
 #!/bin/sh
 
 #
@@ -14,4 +13,11 @@ case $1 in
   xfce) exec dbus-launch xfce4-session ;;
   *) exec dbus-launch  $DEFAULT_SESSION ;;
 esac
+
+setxkbmap -option caps:escape
+
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+
+
+#displaylink_enable && sh /home/hultner/.screenlayout/quadmonitor.sh
+

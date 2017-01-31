@@ -130,3 +130,5 @@ alias väder="curl wttr.in/gothenburg"
 alias wlan="sudo nmtui"
 
 alias suvi=sudoedit
+
+PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"

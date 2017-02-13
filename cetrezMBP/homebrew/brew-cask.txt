@@ -1,0 +1,14 @@
+betterzipql
+osxfuse
+pref-setter
+qlcolorcode
+qlimagesize
+qlmarkdown
+qlprettypatch
+qlstephen
+qlvideo
+quicklook-csv
+quicklook-json
+quicklookase
+suspicious-package
+webpquicklook

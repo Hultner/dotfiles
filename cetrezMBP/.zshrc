@@ -53,7 +53,10 @@ plugins=(git)
 
 # User configuration
 
-export PATH="$HOME/dev/bin:$PATH"
+export PATH="$HOME/Development/bin:$PATH"
+#export PYTHONPATH=$(brew --prefix)/lib/python2.7/site-packages:$PYTHONPATH
+export HOMEBREW_GITHUB_API_TOKEN="7113174eabaae6a3f3c1343b84327e2dbdf41f53"
+
 #export PATH="$HOME/dev/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -103,7 +106,7 @@ alias numfmt="numfmt --to=iec-i"
 alias restart='trap zsh EXIT && exit'
 
 function powerline_precmd() {
-  PS1="$(~/powerline-shell.py $? --shell zsh 2> /dev/null)"
+  PS1="$(~/powerline-shell.py $?  --cwd-max-depth 4 --cwd-max-dir-size 30 --shell zsh 2> /dev/null)"
 }
 
 function install_powerline_precmd() {
@@ -119,9 +122,19 @@ if [ "$TERM" != "linux" ]; then
     install_powerline_precmd
 fi
 
+# base16-shell
+
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
+
+
 # Powerline tmux exports
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 alias killjobs="jobs -p | awk '{print \$3}' | xargs kill"
 #alias 0xdbe="sh ~/dev/ide/0xDBE/bin/0xdbe.sh"
 #alias datagrip="sh ~/dev/ide/datagrip/bin/datagrip.sh"
 #alias jb='python /home/hultner/dev/sandbox/pyjb/jb.py'
+
+export PATH="/usr/local/sbin:$PATH"
+

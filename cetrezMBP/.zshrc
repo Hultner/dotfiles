@@ -55,7 +55,7 @@ plugins=(git)
 
 export PATH="$HOME/Development/bin:$PATH"
 #export PYTHONPATH=$(brew --prefix)/lib/python2.7/site-packages:$PYTHONPATH
-source .tokenrc
+source "$HOME/.tokenrc"
 
 #export PATH="$HOME/dev/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 # export MANPATH="/usr/local/man:$MANPATH"

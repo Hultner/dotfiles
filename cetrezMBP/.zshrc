@@ -49,16 +49,22 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+# plugins=(git zsh-autosuggestions)
 plugins=(git)
 
 # User configuration
 
 export PATH="$HOME/Development/bin:$PATH"
 #export PYTHONPATH=$(brew --prefix)/lib/python2.7/site-packages:$PYTHONPATH
+export PYTHONPATH="$(brew --prefix)/lib/python3.6/site-packages:$PYTHONPATH"
 source "$HOME/.tokenrc"
 
 #export PATH="$HOME/dev/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 # export MANPATH="/usr/local/man:$MANPATH"
+export PATH="/usr/local/sbin:$PATH"
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#export PATH=/Users/hultner/.local/bin:$PATH
+fpath=(/usr/local/share/zsh-completions $fpath)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,7 +112,10 @@ alias numfmt="numfmt --to=iec-i"
 alias restart='trap zsh EXIT && exit'
 
 function powerline_precmd() {
-  PS1="$(~/powerline-shell.py $?  --cwd-max-depth 4 --cwd-max-dir-size 30 --shell zsh 2> /dev/null)"
+  # Something in my PYTHONPATH breaks my powerline, so I'm just unsetting it
+  # temporarily in the given subshell context for now, might investigate this
+  # later.
+  PS1="$(export PYTHONPATH=; ~/powerline-shell.py $?  --cwd-max-depth 4 --cwd-max-dir-size 30 --shell zsh 2> /dev/null)"
 }
 
 function install_powerline_precmd() {
@@ -136,5 +145,29 @@ alias killjobs="jobs -p | awk '{print \$3}' | xargs kill"
 #alias datagrip="sh ~/dev/ide/datagrip/bin/datagrip.sh"
 #alias jb='python /home/hultner/dev/sandbox/pyjb/jb.py'
 
-export PATH="/usr/local/sbin:$PATH"
+bpython() {
+    if test -n "$VIRTUAL_ENV"
+    then
+        PYTHONPATH="$(python -c 'import sys; print( ":".join(sys.path))')" \
+        command bpython "$@"
+    else
+        command bpython "$@"
+    fi
+}
+alias slack="export LANG=en_US.UTF-8; export LC_ALL=en_US.UTF-8; locale; weechat"
+alias lgb="export LANG=en_US.UTF-8; export LC_ALL=en_US.UTF-8; locale;"
 
+function gist() {
+    repo="$1"
+    shift
+    if [ "$repo" = "clone" ]; then
+        repo="$1"
+        shift
+    fi
+    git clone git@gist.github.com:"$repo".git "$@"
+}
+
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
+
+#export PYTHONPATH="$(brew --prefix)/lib/python3.6/site-packages:$PYTHONPATH"

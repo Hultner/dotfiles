@@ -1,1 +1,6 @@
 /Users/hultner/.tmux/plugins/tpm	40
+/Users/hultner/.tmux/resurrect	40
+/Users/hultner	40
+/Users/hultner/.tmux/plugins/tmux-sidebar	40
+/Users/hultner/Development/cetrez/python/flask-test-service	65
+/Users/hultner/Development/cetrez/python/flask-test-service/test_service	40

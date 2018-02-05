@@ -78,6 +78,8 @@ source $VIMRUNTIME/menu.vim
 
 " Turn on the WiLd menu
 set wildmenu
+set wildmode=list:longest,full
+set mouse=a
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
@@ -371,4 +373,4 @@ map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
 
-
+set clipboard=unnamed

@@ -1,0 +1,36 @@
+[user]
+	name = Alexander Hultnér
+	email = ahultner@gmail.com
+	signingkey = B988448BDF4F5098
+[branch "master"]
+	rebase = true
+[branch "develop"]
+	rebase = true
+[pull]
+	rebase = true
+[core]
+	excludesfile = /Users/hultner/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/hultner/.stCommitMsg
+	gpgsign = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[alias]
+	branches = !legit branches
+	publish = !legit publish
+	unpublish = !legit unpublish
+	sync = !legit sync
+	switch = !legit switch
+	resync = !legit resync
+	undo = !legit undo
+[gpg]
+	program = /usr/local/bin/gpg

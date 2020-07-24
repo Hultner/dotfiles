@@ -1,0 +1,4 @@
+/Users/hultner/dev/easycube/EasyCube.FacilityManager	40
+/Users/hultner/dev/hantera/hantera_2	40
+/Users/hultner/Library/Application Support/Code - Insiders	40
+/Users/hultner/dev/python/plhyground	40

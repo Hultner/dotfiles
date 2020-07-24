@@ -1,0 +1,17 @@
+{
+  "segments": [
+    "virtual_env",
+    "hostname",
+    "ssh",
+    "cwd",
+    "git",
+    "newline",
+    "username",
+    "root"
+  ],
+  "cwd": {
+      "max_depth": 4,
+      "max_dir_size": 20
+  },
+  "theme": "washed"
+}

@@ -1564,7 +1564,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -b com.runningwithcrayons.Alfred-3"
+                                        "shell_command": "open -a 'Alfred 4'"
                                     }
                                 ],
                                 "type": "basic"
@@ -1639,7 +1639,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'Google Chrome'"
+                                        "shell_command": "open -a 'Brave Browser'"
                                     }
                                 ],
                                 "type": "basic"
@@ -2718,10 +2718,64 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "Ctrl+Cmd+Shift+Esc to Sleep Monitor",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "escape",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control",
+                                            "command",
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "eject",
+                                        "modifiers": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },
-            "devices": [],
+            "devices": [
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 8705,
+                        "vendor_id": 4617
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": []
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 8705,
+                        "vendor_id": 4617
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": []
+                }
+            ],
             "fn_function_keys": [
                 {
                     "from": {
